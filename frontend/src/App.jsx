@@ -1,11 +1,13 @@
-import Home from "./pages/Home";
-
+import React from "react";
+import Footer from "../components/Footer";
+import Departures from "../pages/Departures";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Departures />
+      <Footer />
     </div>
   );
 }
