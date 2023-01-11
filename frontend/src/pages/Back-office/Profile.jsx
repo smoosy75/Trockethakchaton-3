@@ -64,6 +64,11 @@ function Profile() {
               />
             </div>
           </div>
+          <div className="flex justify-center">
+            <button className="btnaddProfil" type="button">
+              Update
+            </button>
+          </div>
         </div>
       </div>
     </div>
