@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Profile from "./pages/Back-office/Profile";
 import Rocket from "./pages/Back-office/Rocket";
-import NavBackOffice from "./components/NavBackOffice";
+import NavBackOffice from "./components/Back-Office-Composant/NavBackOffice";
 
 import "./App.css";
 
