@@ -1,9 +1,18 @@
-// eslint-disable-next-line import/extensions
-import PlanetsCards from "../components/PlanetsCards.jsx";
+import PlanetsCards from "../components/PlanetsCards";
 import Header from "../components/Header";
 import "./Departures.css";
 
 function Departures() {
+  // eslint-disable-next-line no-unused-vars
+  const planets = [
+    { name: "Earth", img: "../assets/earth.png", desc: "l" },
+    { name: "Mars", img: "../assets/mars.png", desc: "l" },
+    { name: "Uranus", img: "../assets/uranus.png", desc: "l" },
+    { name: "Venus", img: "../assets/venus.png", desc: "l" },
+    { name: "Mercury", img: "../assets/mercure.png", desc: "l" },
+    { name: "Jupiter", img: "../assets/jupiter.png", desc: "l" },
+  ];
+
   return (
     <div>
       <Header />

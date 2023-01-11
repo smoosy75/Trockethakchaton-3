@@ -4,7 +4,8 @@ function PlanetsCards() {
   return (
     <div className="cardPlanet">
       <div className="card">
-        <h1>Mars</h1>
+        <h1>Earth</h1>
+        <img src="../assets/earth.png" alt="img" />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
     </div>
