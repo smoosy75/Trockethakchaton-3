@@ -33,7 +33,7 @@ function RegisterPage() {
                   Email
                 </label>
                 <input
-                  type="email"
+                  type="mail"
                   id="email"
                   className="inline-block w-full rounded-full bg-white p-2.5 leading-none text-black placeholder-gray-500  placeholder:opacity-60"
                   placeholder="Malik.leboss@user.com"
@@ -47,7 +47,7 @@ function RegisterPage() {
                   Company Name
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   id="email"
                   className="inline-block w-full rounded-full bg-white p-2.5 leading-none text-black placeholder-gray-500  placeholder:opacity-60"
                   placeholder="Name of the Company"
