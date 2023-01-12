@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 import mail from "../../assets/icones/mail.png";
 import compte from "../../assets/icones/compte.png";
@@ -39,6 +40,24 @@ function Profile() {
       .then((users) => updateSetting(users))
       .catch((err) => console.error(err));
   }, []);
+
+  const handleUpdateSetting = () => {
+    axios
+      .put(`${import.meta.env.VITE_BACKEND_URL}/company/${id}`, {
+        ...mySetting,
+      })
+      .then(() => updateSetting())
+      .catch((error) => console.error(error));
+  };
+
+  // const handleUpdateSetting = () => {
+  //   axios
+  //     .delete(`${import.meta.env.VITE_BACKEND_URL}/company/${id}`)
+  //     .then((company) => {
+  //       window.location.reload(company);
+  //     })
+  //     .catch((error) => console.error(error));
+  // };
 
   return (
     <div className="bg-black h-screen">
@@ -102,7 +121,11 @@ function Profile() {
             </div>
           </div>
           <div className="flex justify-center">
-            <button className="btnaddProfil" type="button">
+            <button
+              className="btnaddProfil"
+              type="button"
+              onClick={handleUpdateSetting}
+            >
               Update
             </button>
           </div>

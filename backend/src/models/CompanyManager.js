@@ -15,7 +15,7 @@ class CompanyManager extends AbstractManager {
   update(users) {
     return this.connection.query(
       `update ${this.table} set Email = ?, Password = ?, ConfirmPassword = ?, Name = ? where id = ?`,
-      [users.Email, users.Password, users.ConfirmPassword, users.Name]
+      [users.Email, users.Password, users.ConfirmPassword, users.Name, users.id]
     );
   }
 }
