@@ -1,8 +1,18 @@
-import React from "react";
+import { React, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function checkout() {
+  const [value, setValue] = useState("default");
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(value);
+  };
+
   const notify = () => toast("Your order has been booked!");
   return (
     <div className="relative mx-auto w-full bg-black">
@@ -63,7 +73,17 @@ function checkout() {
                       id="month"
                       className="cursor-pointer rounded border-gray-300 bg-gray-50 py-3 px-2 text-sm shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
                     >
-                      <option value="">Month</option>
+                      <option value="">jan</option>
+                      <option value="">feb</option>
+                      <option value="">apr</option>
+                      <option value="">may</option>
+                      <option value="">jun</option>
+                      <option value="">jul</option>
+                      <option value="">aug</option>
+                      <option value="">sept</option>
+                      <option value="">oct</option>
+                      <option value="">nov</option>
+                      <option value="">des</option>
                     </select>
                   </div>
                   <div className="my-1 ml-3 mr-6">
@@ -161,6 +181,33 @@ function checkout() {
             </ul>
             <div className="my-5 h-0.5 w-full bg-white bg-opacity-30" />
             <div className="space-y-2">
+              <span className=" text-lg font-bold text-yellow-400 mb-10">
+                Time of Location:
+              </span>
+              <form onSubmit={handleSubmit}>
+                <select
+                  defaultValue={value}
+                  onChange={handleChange}
+                  name="month"
+                  id="month"
+                  className="cursor-pointer rounded border-gray-300 bg-gray-50 py-3 px-2 text-sm shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
+                >
+                  <option value="default" disabled hidden>
+                    Location Time
+                  </option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                </select>
+              </form>
               <p className="flex justify-between text-lg font-bold text-white">
                 <span className="text-yellow-400">Total price:</span>
                 <span>$510.00</span>
