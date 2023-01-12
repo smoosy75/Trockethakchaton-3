@@ -4,35 +4,36 @@ import "./Departures.css";
 
 function Departures() {
   const planets = [
-    { name: "Earth", img: "../assets/earth.png", desc: "notre planète bleu " },
-    { name: "Mars", img: "../assets/mars.png", desc: "l" },
-    { name: "Uranus", img: "../assets/uranus.png", desc: "l" },
-    { name: "Venus", img: "../assets/venus.png", desc: "l" },
-    { name: "Mercury", img: "../assets/mercure.png", desc: "l" },
-    { name: "Jupiter", img: "../assets/jupiter.png", desc: "l" },
+    { img: "../assets/earth.png", desc: "100 vessels avaible" },
+    { img: "../assets/mars.png", desc: "53 vessels avaible" },
+    { img: "../assets/uranus.png", desc: "11 vessels avaible" },
+    { img: "../assets/venus.png", desc: "16 vessels Avaible" },
+    { img: "../assets/mercure.png", desc: "12 vessels Avaible" },
+    { img: "../assets/jupiter.png", desc: "56 vessels Avaible" },
   ];
 
   return (
-    <div>
+    <div className="bjr">
       <Header />
       <div className="departures">
-        <h1>WHERE IS YOUR DEPARTURES ?</h1>
-        <select>
-          <option value="">Earth</option>
-          <option value="">Mars</option>
-          <option value="">Mercury</option>
-          <option value="">Jupiter</option>
-          <option value="">Venus</option>
-          <option value="">Uranus</option>
-        </select>
+        <h1>where is your departure ?</h1>
+        <div className="ho">
+          <select>
+            <option value="">Earth</option>
+            <option value="">Mars</option>
+            <option value="">Mercury</option>
+            <option value="">Jupiter</option>
+            <option value="">Venus</option>
+            <option value="">Uranus</option>
+          </select>
+        </div>
       </div>
-      <h1 className="title-vessels">Vessels Availabes</h1>
       <div className="cardContainer">
         {planets.map((planet) => (
           <div key={planet.name}>
             <div className="card">
-              <h2>{planet.name}</h2>
               <img src={planet.img} alt="img" />
+              <p> ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ </p>
               <p>{planet.desc}</p>
             </div>
           </div>
