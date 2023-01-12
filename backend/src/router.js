@@ -5,6 +5,7 @@ const router = express.Router();
 const vesselsControllers = require("./controllers/vesselsControllers");
 const usersControllers = require("./controllers/usersControllers");
 const companyControllers = require("./controllers/company.controlers");
+const planetsControllers = require("./controllers/planetsControllers");
 
 router.get("/vessels", vesselsControllers.browse);
 router.get("/vessels/:id", vesselsControllers.read);
@@ -23,5 +24,7 @@ router.get("/company/:id", companyControllers.read);
 router.put("/company/:id", companyControllers.edit);
 router.post("/company", companyControllers.add);
 router.delete("/company/:id", companyControllers.destroy);
+
+router.get("/planets", planetsControllers.browse);
 
 module.exports = router;

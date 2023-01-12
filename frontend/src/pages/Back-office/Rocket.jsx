@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import InfoRocket from "@components/backofficerocket/InfoRocketCard";
+import ModalAdd from "@components/backofficerocket/ModalAdd";
 import "./Rocket.css";
 
 function Rocket() {
   const [vesselsCompagny, setVesselsCompany] = useState([]);
+  const [displayModal, setDisplayModal] = useState(false);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/vessels`)
@@ -29,9 +31,11 @@ function Rocket() {
         <button
           type="button"
           className="btnaddrocket discover text-black border-solid border-2 rounded-xl px-6 mx-3 w-3/12"
+          onClick={setDisplayModal}
         >
           ADD
         </button>
+        {displayModal && <ModalAdd setDisplayModal={setDisplayModal} />}
       </div>
       <div className="mx-0">
         {vesselsCompagny.map((vessel) => (
