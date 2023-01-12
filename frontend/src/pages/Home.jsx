@@ -4,11 +4,15 @@ import "./btn.css";
 import Checkout from "../components/Checkout";
 import LoginPage from "../components/LoginPage";
 import RegisterPage from "../components/RegisterPage";
+import "./background.css";
 
 export default function Home() {
   return (
     <div snap-y snap-mandatory overflow-scroll>
-      <div className="w-screen h-screen bg-black m-0 overflow-hidden ">
+      <div className="bgs">
+        <div id="stars" />
+        <div id="stars2" />
+        <div id="stars3" />
         <img
           className="ml-auto mr-auto w-30 h-30"
           src="../src/assets/logo.png"

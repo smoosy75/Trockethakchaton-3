@@ -1,0 +1,67 @@
+.departures {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  height: auto;
+  width: 100%;
+  margin-top: 5rem;
+  font-size: 2rem;
+}
+
+.departures h1 {
+  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  color: black;
+}
+
+.cardContainer {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 15rem;
+  height: 15rem;
+  display: block;
+  background-color: gray;
+  margin: 1rem;
+  margin-top: 5rem;
+  align-items: center;
+  border-radius: 18px;
+  border: 50px;
+}
+
+.card p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  background-color: rgb(80, 80, 80);
+  border-radius: 50px;
+}
+
+.card img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 7rem;
+  max-height: 7rem;
+}
+
+.card h2 {
+  background-color: rgb(80, 80, 80);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
