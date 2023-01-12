@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./Departures.css";
@@ -6,7 +7,7 @@ function Departures() {
   const planets = [
     { img: "../assets/earth.png", desc: "100 vessels avaible" },
     { img: "../assets/mars.png", desc: "53 vessels avaible" },
-    { img: "../assets/uranus.png", desc: "11 vessels avaible" },
+    { img: "../assets/uranus.png", desc: "42 vessels avaible" },
     { img: "../assets/venus.png", desc: "16 vessels Avaible" },
     { img: "../assets/mercure.png", desc: "12 vessels Avaible" },
     { img: "../assets/jupiter.png", desc: "56 vessels Avaible" },
@@ -26,6 +27,14 @@ function Departures() {
             <option value="">Venus</option>
             <option value="">Uranus</option>
           </select>
+
+          <div>
+            <Link to="/vessels">
+              <button className="btn" type="button">
+                PRO
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="cardContainer">

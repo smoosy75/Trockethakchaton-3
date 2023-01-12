@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
+import instance from "../../service/apiConnection";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -15,6 +16,10 @@ function LoginPage() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    instance
+      .post("/login", email)
+      .then((res) => console.warn(res.data))
+      .catch((err) => console.error(err));
   };
   return (
     <div className="relative flex h-full w-full ">
