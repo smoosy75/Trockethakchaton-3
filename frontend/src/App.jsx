@@ -12,8 +12,8 @@ function App() {
       <div className="App">
         <NavBackOffice />
         <Routes>
-          <Route path="/" element={<Profile />} />
-          <Route path="Rocket" element={<Rocket />} />
+          <Route path="profile/:id" element={<Profile />} />
+          <Route path="rocket" element={<Rocket />} />
         </Routes>
       </div>
     </Router>
