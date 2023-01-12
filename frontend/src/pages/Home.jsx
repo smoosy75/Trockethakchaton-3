@@ -2,6 +2,8 @@ import PresSpace from "../components/PresSpace";
 import Pres from "../components/Pres";
 import "./btn.css";
 import Checkout from "../components/Checkout";
+import LoginPage from "../components/LoginPage";
+import RegisterPage from "../components/RegisterPage";
 
 export default function Home() {
   return (
@@ -34,6 +36,12 @@ export default function Home() {
       </div>
       <div className="h-screen w-screen">
         <Checkout />
+      </div>
+      <div className="h-screen w-screen">
+        <LoginPage />
+      </div>
+      <div>
+        <RegisterPage />
       </div>
     </div>
   );

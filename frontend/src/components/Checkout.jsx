@@ -10,7 +10,6 @@ function checkout() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(value);
   };
 
   const notify = () => toast("Your order has been booked!");
