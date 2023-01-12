@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import crayon from "@assets/icones/crayon.png";
 import poubelle from "@assets/icones/poubelle-de-recyclage.png";
 import cercleRouge from "@assets/icones/cercle-rouge.png";
@@ -7,6 +9,17 @@ import cercleVert from "@assets/icones/cercle-vert.png";
 /* eslint-disable react/prop-types */
 
 function InfoRocket({ vessels }) {
+  const { id } = useParams();
+
+  const settingDelete = () => {
+    axios
+      .delete(`${import.meta.env.VITE_BACKEND_URL}/company/${id}`)
+      .then((company) => {
+        window.location.reload(company);
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="flex flex-row justify-center items-center">
       <div className="flex flex-row justify-between items-center font-bold w-9/12 my-2">
@@ -32,7 +45,7 @@ function InfoRocket({ vessels }) {
         <button type="button">
           <img className="w-5 mx-3" src={crayon} alt="" />
         </button>
-        <button type="button">
+        <button type="button" onClick={settingDelete}>
           <img className="w-5 mx-3" src={poubelle} alt="" />
         </button>
       </div>
