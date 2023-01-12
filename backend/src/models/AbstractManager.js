@@ -10,7 +10,9 @@ class AbstractManager {
   }
 
   findAll() {
-    return this.connection.query(`select * from  ${this.table}`);
+    return this.connection.query(
+      `SELECT *, c.NameCompany FROM  ${this.table} AS v INNER JOIN Company AS c ON c.id=v.id`
+    );
   }
 
   delete(id) {

@@ -38,15 +38,15 @@ CREATE TABLE IF NOT EXISTS `trocket`.`Company` (
   `Email` VARCHAR(45) NOT NULL,
   `Password` VARCHAR(45) NOT NULL,
   `ConfirmPassword` VARCHAR(45) NOT NULL,
-  `Name` VARCHAR(45) NOT NULL,
+  `NameCompany` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `Name`) VALUES ('spacex@gmail.com', '123456', '123456', 'SpaceX' );
-INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `Name`) VALUES ('nasa@gmail.com', '123456', '123456', 'NASA' );
-INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `Name`) VALUES ('cnes@gmail.com', '123456', '123456', 'CNES' );
-INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `Name`) VALUES ('starwars@gmail.com', '123456', '123456', 'Star-Wars' );
-INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `Name`) VALUES ('buzzspace@gmail.com', '123456', '123456', 'Buzz-Space' );
+INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `NameCompany`) VALUES ('spacex@gmail.com', '123456', '123456', 'SpaceX' );
+INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `NameCompany`) VALUES ('nasa@gmail.com', '123456', '123456', 'NASA' );
+INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `NameCompany`) VALUES ('cnes@gmail.com', '123456', '123456', 'CNES' );
+INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `NameCompany`) VALUES ('starwars@gmail.com', '123456', '123456', 'Star-Wars' );
+INSERT INTO `Company`(`Email`, `Password`, `ConfirmPassword`, `NameCompany`) VALUES ('buzzspace@gmail.com', '123456', '123456', 'Buzz-Space' );
 
 
 -- -----------------------------------------------------
@@ -67,10 +67,10 @@ CREATE TABLE IF NOT EXISTS `trocket`.`Vessels` (
 ENGINE = InnoDB;
 
 INSERT INTO `Vessels`(`Name`, `Picture`, `Description`, `Places`, `PriceWeek`, `AssuranceDate`, `ControlDate`, `Planets_idPlanets`, `Company_idCompany`) VALUES ('Falcon 9', 'https://img1.freepng.fr/20180409/qvw/kisspng-rocket-launch-spacecraft-buran-stock-photography-rockets-5acbece3c5ae92.5420553115233138918097.jpg', 'This spaceship is perfect for a trip with family or friends with its 8 bedrooms. You will have the comfort of a 5 star hotel. This comes at the cost of low speed but more time to enjoy the trip.', '8', '1 500', '2023-12-04', '2023-02-08', 6, 1);
-INSERT INTO `Vessels`(`Name`, `Picture`, `Description`, `Places`, `PriceWeek`, `AssuranceDate`, `ControlDate`, `Planets_idPlanets`, `Company_idCompany`) VALUES ('Falcon Heavy', 'https://img2.freepng.fr/20180605/wai/kisspng-spacecraft-elyrian-brides-sancecrea-s-heart-ship-5b173a808779f0.6411407415282489605549.jpg', 'Fantastic ship, efficient and fast, it will allow you to travel safely. Discover a multitude of options on board, such as cruise control and take advantage of new generation mirrors.', '12', '2 100', '2023-08-14', '2024-01-01', 8, 2);
+INSERT INTO `Vessels`(`Name`, `Picture`, `Description`, `Places`, `PriceWeek`, `AssuranceDate`, `ControlDate`, `Planets_idPlanets`, `Company_idCompany`) VALUES ('Falcon Heavy', 'https://img2.freepng.fr/20180605/wai/kisspng-spacecraft-elyrian-brides-sancecrea-s-heart-ship-5b173a808779f0.6411407415282489605549.jpg', 'Fantastic ship, efficient and fast, it will allow you to travel safely. Discover a multitude of options on board, such as cruise control and take advantage of new generation mirrors.', '12', '2 100', '2023-08-14', '2022-01-01', 8, 2);
 INSERT INTO `Vessels`(`Name`, `Picture`, `Description`, `Places`, `PriceWeek`, `AssuranceDate`, `ControlDate`, `Planets_idPlanets`, `Company_idCompany`) VALUES ('Dragon', 'https://img2.freepng.fr/20180606/zrj/kisspng-spacecraft-clip-art-space-ship-5b17f656c0f1c0.6020330415282970467903.jpg', 'Very fast ship to cross the solar system in duo. This very compact vessel has an advantage in terms of its lightness while allowing safe navigation.', '2', '1 000', '2023-06-17', '2023-07-28', 3, 4);
 INSERT INTO `Vessels`(`Name`, `Picture`, `Description`, `Places`, `PriceWeek`, `AssuranceDate`, `ControlDate`, `Planets_idPlanets`, `Company_idCompany`) VALUES ('Starship', 'https://e7.pngegg.com/pngimages/955/376/png-clipart-star-citizen-wing-commander-vehicle-industry-spacecraft-star-citizen-spacecraft-vehicle.png', 'Fairly heavy and slow vehicle but can carry heavy loads. This utility is one of our best ships in terms of load. Enjoy the scenery aboard the Starship!', '25', '3 000', '2023-02-17', '2023-09-21', 1, 5);
-INSERT INTO `Vessels`(`Name`, `Picture`, `Description`, `Places`, `PriceWeek`, `AssuranceDate`, `ControlDate`, `Planets_idPlanets`, `Company_idCompany`) VALUES ('Spaceflight', 'https://e1.pngegg.com/pngimages/402/945/png-clipart-helicoptere-vaisseau-spatial-art-conceptuel-vaisseau-spatial-conception-de-vaisseau-spatial-dessin-espace-science-fiction.png', 'Commercial vehicle is a vehicle capable of carrying out very different functions, generally for professional purposes.', '10', '2 000', '2023-04-11', '2023-05-11', 2, 3);
+INSERT INTO `Vessels`(`Name`, `Picture`, `Description`, `Places`, `PriceWeek`, `AssuranceDate`, `ControlDate`, `Planets_idPlanets`, `Company_idCompany`) VALUES ('Spaceflight', 'https://e1.pngegg.com/pngimages/402/945/png-clipart-helicoptere-vaisseau-spatial-art-conceptuel-vaisseau-spatial-conception-de-vaisseau-spatial-dessin-espace-science-fiction.png', 'Commercial vehicle is a vehicle capable of carrying out very different functions, generally for professional purposes.', '10', '2 000', '2022-04-11', '2023-05-11', 2, 3);
 
 
 
