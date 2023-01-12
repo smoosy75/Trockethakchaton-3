@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -16,17 +17,27 @@ function LoginPage() {
     event.preventDefault();
   };
   return (
-    <div className="relative flex h-full w-full">
+    <div className="relative flex h-full w-full ">
       <div className="h-screen w-1/2 bg-black">
         <div className="mx-auto flex h-full w-2/3 flex-col justify-center text-white xl:w-1/2">
-          <div className="mb-10">
+          <div className="mb-10 relative">
+            <Link to="/">
+              <button
+                className="text-yellow-400 absolute -top-44 -left-28"
+                type="button"
+              >
+                Home
+              </button>
+            </Link>
             <p className="text-2xl ">Login</p>
             <p>
               If you don't have an account, you can{" "}
-              <span className="text-yellow-400 cursor-pointer">
-                {" "}
-                register here !
-              </span>
+              <Link to="/Register">
+                <span className="text-yellow-400 cursor-pointer">
+                  {" "}
+                  register here !
+                </span>
+              </Link>
             </p>
           </div>
 
