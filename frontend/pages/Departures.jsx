@@ -1,11 +1,10 @@
-import PlanetsCards from "../components/PlanetsCards";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "./Departures.css";
 
 function Departures() {
-  // eslint-disable-next-line no-unused-vars
   const planets = [
-    { name: "Earth", img: "../assets/earth.png", desc: "l" },
+    { name: "Earth", img: "../assets/earth.png", desc: "notre planète bleu " },
     { name: "Mars", img: "../assets/mars.png", desc: "l" },
     { name: "Uranus", img: "../assets/uranus.png", desc: "l" },
     { name: "Venus", img: "../assets/venus.png", desc: "l" },
@@ -27,7 +26,19 @@ function Departures() {
           <option value="">Uranus</option>
         </select>
       </div>
-      <PlanetsCards />
+      <h1 className="title-vessels">Vessels Availabes</h1>
+      <div className="cardContainer">
+        {planets.map((planet) => (
+          <div key={planet.name}>
+            <div className="card">
+              <h2>{planet.name}</h2>
+              <img src={planet.img} alt="img" />
+              <p>{planet.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <Footer />
     </div>
   );
 }
