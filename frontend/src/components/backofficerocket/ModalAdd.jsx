@@ -166,8 +166,6 @@ function Modal() {
                       className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600"
                       name="Planets_idPlanets"
                       onChange={(e) => {
-                        // console.log("select change for name", e.target.name);
-                        // console.log("select change for value", e.target.value);
                         methodOnChange(e.target.name, e.target.value);
                       }}
                     >
