@@ -1,10 +1,10 @@
-HACKATON AWS TEAM MEMBER :
+HACKATON AWS TEAM ROCKET MEMBER 🚀 :
 
 Malik MOUCHOU,
 Quentin VIVAN,
 Mustapha SAID,
-Charlie Piancatelli,
-Alexandre Rouxel,
+Charlie PIANCATELLI,
+Alexandre ROUXEL,
 
 
 ### Available Commands
