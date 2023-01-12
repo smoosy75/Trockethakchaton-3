@@ -13,9 +13,9 @@ function Profile() {
   const [mySetting, setMySetting] = useState({
     id: null,
     email: "",
-    name: "",
-    newPassword: "",
-    confirmNewPassword: "",
+    nameCompany: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const methodOnChange = (place, value) => {
@@ -27,17 +27,17 @@ function Profile() {
   const updateSetting = (data) => {
     setMySetting({
       id: data.id,
-      email: data.Email,
-      name: data.Name,
-      newPassword: "",
-      confirmNewPassword: "",
+      Email: data.Email,
+      NameCompany: data.NameCompany,
+      Password: data.Password,
+      ConfirmPassword: data.ConfirmPassword,
     });
   };
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/company/${id}`)
       .then((response) => response.json())
-      .then((users) => updateSetting(users))
+      .then((company) => updateSetting(company))
       .catch((err) => console.error(err));
   }, []);
 
@@ -50,20 +50,11 @@ function Profile() {
       .catch((error) => console.error(error));
   };
 
-  // const handleUpdateSetting = () => {
-  //   axios
-  //     .delete(`${import.meta.env.VITE_BACKEND_URL}/company/${id}`)
-  //     .then((company) => {
-  //       window.location.reload(company);
-  //     })
-  //     .catch((error) => console.error(error));
-  // };
-
   return (
     <div className="bg-black h-screen">
       <div className="flex justify-center pt-8">
         <div className="w-96">
-          <h2 className="text-white text-2xl mb-5">SpaceX</h2>
+          <h2 className="text-white text-2xl mb-5">{mySetting.name}</h2>
           <div>
             <h3 className="text-white mt-5 mb-1">Email</h3>
             <div className="flex pb-1 border-b-2 border-white">
@@ -72,9 +63,9 @@ function Profile() {
                 className="bg-black CouleurtextJauneC"
                 type="text"
                 placeholder="Email"
-                value={mySetting.email}
+                value={mySetting.Email}
                 onChange={(e) => methodOnChange(e.target.name, e.target.value)}
-                name="email"
+                name="Email"
               />
             </div>
           </div>
@@ -86,9 +77,9 @@ function Profile() {
                 className="bg-black CouleurtextJauneC"
                 type="text"
                 placeholder="Compagny"
-                value={mySetting.name}
+                value={mySetting.NameCompany}
                 onChange={(e) => methodOnChange(e.target.name, e.target.value)}
-                name="name"
+                name="NameCompany"
               />
             </div>
           </div>
@@ -98,11 +89,11 @@ function Profile() {
               <img className="w-4 m-1 mr-3" src={verrou} alt="icone mail" />
               <input
                 className="bg-black CouleurtextJauneC"
-                type="text"
+                type="password"
                 placeholder="Enter your new password"
-                value={mySetting.newPassword}
+                value={mySetting.Password}
                 onChange={(e) => methodOnChange(e.target.name, e.target.value)}
-                name="newPassword"
+                name="Password"
               />
             </div>
           </div>
@@ -112,11 +103,11 @@ function Profile() {
               <img className="w-4 m-1 mr-3" src={verrou} alt="icone mail" />
               <input
                 className="bg-black CouleurtextJauneC"
-                type="text"
+                type="password"
                 placeholder="Enter your new password"
-                value={mySetting.confirmNewPassword}
+                value={mySetting.ConfirmPassword}
                 onChange={(e) => methodOnChange(e.target.name, e.target.value)}
-                name="confirmNewPassword"
+                name="ConfirmPassword"
               />
             </div>
           </div>

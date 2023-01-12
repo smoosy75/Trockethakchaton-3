@@ -5,17 +5,28 @@ class CompanyManager extends AbstractManager {
     super({ table: "company" });
   }
 
-  insert(users) {
+  insert(company) {
     return this.connection.query(
-      `insert into ${this.table} (Email, Password, ConfirmPassword, Name) values (?, ?, ?, ?)`,
-      [users.Email, users.Password, users.ConfirmPassword, users.Name]
+      `insert into ${this.table} (Email, Password, ConfirmPassword, NameCompany) values (?, ?, ?, ?)`,
+      [
+        company.Email,
+        company.Password,
+        company.ConfirmPassword,
+        company.NameCompany,
+      ]
     );
   }
 
-  update(users) {
+  update(company) {
     return this.connection.query(
-      `update ${this.table} set Email = ?, Password = ?, ConfirmPassword = ?, Name = ? where id = ?`,
-      [users.Email, users.Password, users.ConfirmPassword, users.Name, users.id]
+      `update ${this.table} set Email = ?, Password = ?, ConfirmPassword = ?, NameCompany = ? where id = ?`,
+      [
+        company.Email,
+        company.Password,
+        company.ConfirmPassword,
+        company.NameCompany,
+        company.id,
+      ]
     );
   }
 }
