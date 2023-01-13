@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { React, useEffect } from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import updateMeta from "../src/services/meta";
 import "./Departures.css";
 
@@ -54,7 +53,6 @@ function Departures() {
           </div>
         ))}
       </div>
-      <Footer />
     </div>
   );
 }

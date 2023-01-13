@@ -94,7 +94,7 @@ function Modal() {
                       className="bg-black CouleurtextJauneC"
                       type="text"
                       placeholder="Company"
-                      value="1"
+                      value="SpaceX"
                       name="Company_idCompany"
                     />
                   </div>

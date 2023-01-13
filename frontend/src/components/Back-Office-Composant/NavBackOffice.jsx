@@ -6,7 +6,10 @@ function NavBackOffice() {
   return (
     <nav className="p-7 w-full bg-black">
       <ul className="flex justify-center text-xl">
-        <Link to="/" className="CouleurtextJauneBackOffice text-white mr-4">
+        <Link
+          to="/profile/1"
+          className="CouleurtextJauneBackOffice text-white mr-4"
+        >
           Profile
         </Link>
         <Link

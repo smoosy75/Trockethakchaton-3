@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-
+import NavBackOffice from "@components/Back-Office-Composant/NavBackOffice";
 import updateMeta from "@services/meta";
 import mail from "../../assets/icones/mail.png";
 import compte from "../../assets/icones/compte.png";
@@ -71,6 +71,7 @@ function Profile() {
 
   return (
     <>
+      <NavBackOffice />
       <ToastContainer
         position="top-right"
         autoClose={3000}
