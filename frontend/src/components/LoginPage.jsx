@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import instance from "../../service/apiConnection";
 import updateMeta from "@services/meta";
+import instance from "../../service/apiConnection";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -108,12 +108,14 @@ function LoginPage() {
                 </div>
               </div>
               <div className="my-10">
-                <button
-                  type="submit"
-                  className="w-full rounded-full p-5 bg-yellow-400 opacity-80 hover:opacity-100"
-                >
-                  Login
-                </button>
+                <Link to="/profile/1">
+                  <button
+                    type="submit"
+                    className="w-full rounded-full p-5 bg-yellow-400 opacity-80 hover:opacity-100"
+                  >
+                    Login
+                  </button>
+                </Link>
               </div>
             </form>
           </div>

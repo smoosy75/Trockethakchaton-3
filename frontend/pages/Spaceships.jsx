@@ -3,10 +3,9 @@ import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./Spaceships.css";
-import Modal from "../components/Modal";
 
 function Spaceships() {
-  const [show, setShow] = useState(false);
+  const [, setShow] = useState(false);
   const Vessels = [
     {
       name: "Falcon 9",

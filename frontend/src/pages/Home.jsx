@@ -5,7 +5,7 @@ import Checkout from "../components/Checkout";
 import LoginPage from "../components/LoginPage";
 import RegisterPage from "../components/RegisterPage";
 import "./background.css";
-import Acceuil from "../components/Acceuil";
+import Acceuil from "../components/Accueil";
 
 export default function Home() {
   return (
