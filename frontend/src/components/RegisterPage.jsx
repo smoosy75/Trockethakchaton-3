@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import updateMeta from "@services/meta";
 
 function RegisterPage() {
+  useEffect(() => {
+    updateMeta(
+      "Connexion Company",
+      "Allows companies to connect to their back office"
+    );
+  }, []);
+
   return (
     <div className="relative flex h-full w-full">
       <div className="h-screen w-1/2 bg-black">

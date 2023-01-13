@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
+import updateMeta from "@services/meta";
 import mail from "../../assets/icones/mail.png";
 import compte from "../../assets/icones/compte.png";
 import verrou from "../../assets/icones/verrou.png";
-
 import "react-toastify/dist/ReactToastify.css";
 import "./Profile.css";
 
@@ -19,6 +19,10 @@ function Profile() {
     password: "",
     confirmPassword: "",
   });
+
+  useEffect(() => {
+    updateMeta("Settings", "Allows companies to connect to their back office");
+  }, []);
 
   const notify = (msg) => {
     toast(msg);

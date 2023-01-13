@@ -1,5 +1,7 @@
+import { React, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import updateMeta from "../src/services/meta";
 import "./Departures.css";
 
 function Departures() {
@@ -11,6 +13,10 @@ function Departures() {
     { img: "../assets/mercure.png", desc: "12 vessels Avaible" },
     { img: "../assets/jupiter.png", desc: "56 vessels Avaible" },
   ];
+
+  useEffect(() => {
+    updateMeta("Departures", "Enjoy your flights with quality service");
+  }, []);
 
   return (
     <div className="bjr">
