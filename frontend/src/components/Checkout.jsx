@@ -1,12 +1,17 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import updateMeta from "@services/meta";
 
 function checkout() {
   const [value, setValue] = useState("default");
   const handleChange = (e) => {
     setValue(e.target.value);
   };
+
+  useEffect(() => {
+    updateMeta("Payment", "Make payments for your vehicle rental");
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

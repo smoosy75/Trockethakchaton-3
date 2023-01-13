@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import InfoRocket from "@components/backofficerocket/InfoRocketCard";
 import ModalAdd from "@components/backofficerocket/ModalAdd";
+import updateMeta from "@services/meta";
 import "./Rocket.css";
 
 function Rocket() {
   const [vesselsCompagny, setVesselsCompany] = useState([]);
   const [displayModal, setDisplayModal] = useState(false);
+
+  useEffect(() => {
+    updateMeta("List Rocket", "The list of different spaceships");
+  }, []);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/vessels`)
