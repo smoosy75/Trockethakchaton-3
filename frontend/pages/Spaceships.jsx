@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "./Spaceships.css";
 
 function Spaceships() {
@@ -76,7 +75,7 @@ function Spaceships() {
   return (
     <div>
       <Header />
-      <div>
+      <div className="h-screen">
         <h1 className="title-vessels">Vessels Availabes on </h1>
         <div className="cardContainer">
           {Vessels.map((vessels) => (
@@ -86,7 +85,6 @@ function Spaceships() {
                 <h2 className="text-yellow-400 font-bold">{vessels.name}</h2>
                 <p>Place: {vessels.place}</p>
                 <div className="justify-between">
-                  {/* {show &&  show={show} />} */}
                   <button
                     className="seemore"
                     onClick={() => setShow(true)}
@@ -105,7 +103,6 @@ function Spaceships() {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

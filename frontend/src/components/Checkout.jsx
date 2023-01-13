@@ -1,10 +1,20 @@
 import { React, useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import updateMeta from "@services/meta";
 
 function checkout() {
   const [value, setValue] = useState("default");
+
+  const navigate = useNavigate();
+  const notify = () => toast("Your order has been booked!");
+
+  function handleClick() {
+    notify("Your order has been booked!");
+    setTimeout(() => navigate("/"), 4000);
+  }
+
   const handleChange = (e) => {
     setValue(e.target.value);
   };
@@ -17,7 +27,6 @@ function checkout() {
     e.preventDefault();
   };
 
-  const notify = () => toast("Your order has been booked!");
   return (
     <div className="relative mx-auto w-full bg-black">
       <div className="grid min-h-screen grid-cols-10">
@@ -132,7 +141,7 @@ function checkout() {
               </a>
             </p>
             <button
-              onClick={notify}
+              onClick={handleClick}
               type="submit"
               className="mt-4 inline-flex  items-center  border-[3px] border-yellow-400 justify-center rounded bg-black py-2.5 px-4 text-base font-semibold tracking-wide text-yellow-400 text-opacity-80 outline-none ring-offset-2 transition hover:text-opacity-100 focus:ring-2 focus:ring-teal-500 sm:text-lg"
             >
@@ -140,7 +149,7 @@ function checkout() {
             </button>
             <ToastContainer
               position="top-center"
-              autoClose={5000}
+              autoClose={10000}
               hideProgressBar={false}
               newestOnTop={false}
               closeOnClick

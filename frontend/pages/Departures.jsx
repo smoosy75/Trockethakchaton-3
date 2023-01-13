@@ -36,7 +36,7 @@ function Departures() {
           <div>
             <Link to="/vessels">
               <button className="btn" type="button">
-                PRO
+                NEXT
               </button>
             </Link>
           </div>
