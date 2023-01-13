@@ -1,9 +1,17 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import instance from "../../service/apiConnection";
+import updateMeta from "@services/meta";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    updateMeta(
+      "Connexion Company",
+      "Allows companies to connect to their back office"
+    );
+  }, []);
 
   const changeEmail = (e) => {
     if (

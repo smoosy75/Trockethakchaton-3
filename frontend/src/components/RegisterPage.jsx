@@ -1,6 +1,9 @@
-import { React, useState } from "react";
+
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import instance from "../../service/apiConnection";
+import updateMeta from "@services/meta";
+
 
 function RegisterPage() {
   const [registerUser, setRegisterUser] = useState("");
@@ -12,11 +15,17 @@ function RegisterPage() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    instance
-      .post("/signup", registerUser)
-      .then((res) => console.warn(res.data))
-      .catch((err) => console.error(err));
   };
+
+function RegisterPage() {
+  useEffect(() => {
+    updateMeta(
+      "Connexion Company",
+      "Allows companies to connect to their back office"
+    );
+  }, []);
+
+
   return (
     <div className="relative flex h-full w-full">
       <div className="h-screen w-1/2 bg-black">

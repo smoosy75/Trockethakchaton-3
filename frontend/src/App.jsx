@@ -7,6 +7,9 @@ import Accueil from "./components/Accueil";
 import RegisterPage from "./components/RegisterPage";
 import Spaceships from "../pages/Spaceships";
 import LoginPage from "./components/LoginPage";
+import Profile from "./pages/Back-office/Profile";
+import Rocket from "./pages/Back-office/Rocket";
+
 import "./App.css";
 
 function App() {
@@ -32,6 +35,18 @@ function App() {
         </div>
       </Router> */}
       </div>
+      <Routes>
+        <Route path="/" element={<Acceuil />} />
+        <Route path="/Departures" element={<Departures />} />
+        <Route path="/Login" element={<LoginPage />} />
+        <Route path="/Checkout" element={<Checkout />} />
+        <Route path="/Register" element={<RegisterPage />} />
+      </Routes>
+      <NavBackOffice />
+      <Routes>
+        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/rocket" element={<Rocket />} />
+      </Routes>
     </Router>
   );
 }

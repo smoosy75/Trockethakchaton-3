@@ -56,13 +56,13 @@ CREATE TABLE IF NOT EXISTS `trocket`.`Vessels` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(45) NOT NULL,
   `Picture` VARCHAR(1000) NOT NULL,
-  `Description` VARCHAR(1000) NOT NULL,
+  `Description` VARCHAR(1000),
   `Places` VARCHAR(45) NOT NULL,
   `PriceWeek` VARCHAR(45) NOT NULL,
   `AssuranceDate` DATE NOT NULL,
   `ControlDate` VARCHAR(45) NOT NULL,
-  `Planets_idPlanets` INT NOT NULL,
-  `Company_idCompany` INT NOT NULL,
+  `Planets_idPlanets` INT,
+  `Company_idCompany` INT,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
