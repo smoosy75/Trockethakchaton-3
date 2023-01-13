@@ -1,10 +1,29 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "@pages/Back-office/Rocket.css";
 
 /* eslint-disable react/prop-types */
 
-function Modal({ setDisplayModal }) {
-  const [, setPlanets] = useState("");
+function Modal() {
+  const [planets, setPlanets] = useState();
+  const [vessel, setvessel] = useState({
+    Name: "",
+    Picture: "",
+    Places: "",
+    PriceWeek: "",
+    AssuranceDate: "",
+    ControlDate: "",
+  });
+
+  //   const handleButtonCancel = () => {
+  //     setDisplayModal(false);
+  //   };
+
+  const methodOnChange = (key, value) => {
+    const newVessel = { ...vessel };
+    newVessel[key] = value;
+    setvessel(newVessel);
+  };
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/planets`)
@@ -15,12 +34,13 @@ function Modal({ setDisplayModal }) {
       .catch((err) => console.error(err));
   }, []);
 
-  const handlePlanetsChange = (e) => {
-    setPlanets(e.target.value);
-  };
-
-  const handleButtonCancel = () => {
-    setDisplayModal(false);
+  const settingADD = () => {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/vessels`, {
+        ...vessel,
+      })
+      .then()
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -44,8 +64,11 @@ function Modal({ setDisplayModal }) {
                       className="bg-black CouleurtextJauneC"
                       type="text"
                       placeholder="Name"
-                      value="Name"
-                      name="name"
+                      value={vessel.Name}
+                      onChange={(e) =>
+                        methodOnChange(e.target.name, e.target.value)
+                      }
+                      name="Name"
                     />
                   </div>
                 </div>
@@ -56,8 +79,11 @@ function Modal({ setDisplayModal }) {
                       className="bg-black CouleurtextJauneC"
                       type="text"
                       placeholder="URL"
-                      value="URL"
-                      name="url"
+                      value={vessel.Picture}
+                      onChange={(e) =>
+                        methodOnChange(e.target.name, e.target.value)
+                      }
+                      name="Picture"
                     />
                   </div>
                 </div>
@@ -68,8 +94,8 @@ function Modal({ setDisplayModal }) {
                       className="bg-black CouleurtextJauneC"
                       type="text"
                       placeholder="Company"
-                      value="Company"
-                      name="company"
+                      value="1"
+                      name="Company_idCompany"
                     />
                   </div>
                 </div>
@@ -80,8 +106,11 @@ function Modal({ setDisplayModal }) {
                       className="bg-black CouleurtextJauneC"
                       type="text"
                       placeholder="Places"
-                      value="Numbers"
-                      name="places"
+                      value={vessel.Places}
+                      onChange={(e) =>
+                        methodOnChange(e.target.name, e.target.value)
+                      }
+                      name="Places"
                     />
                   </div>
                 </div>
@@ -92,20 +121,26 @@ function Modal({ setDisplayModal }) {
                       className="bg-black CouleurtextJauneC"
                       type="text"
                       placeholder="Price"
-                      value="In $"
-                      name="price"
+                      value={vessel.PriceWeek}
+                      onChange={(e) =>
+                        methodOnChange(e.target.name, e.target.value)
+                      }
+                      name="PriceWeek"
                     />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-white mt-5 mb-1">Assurance</h3>
+                  <h3 className="text-white mt-5 mb-1">Insurance</h3>
                   <div className="flex pb-1 border-b-2 border-white">
                     <input
                       className="bg-black CouleurtextJauneC"
                       type="text"
-                      placeholder="Expiration date"
-                      value="AAAA-MM-DD"
-                      name="expiration date"
+                      placeholder="AAAA-MM-DD"
+                      value={vessel.AssuranceDate}
+                      onChange={(e) =>
+                        methodOnChange(e.target.name, e.target.value)
+                      }
+                      name="AssuranceDate"
                     />
                   </div>
                 </div>
@@ -115,9 +150,12 @@ function Modal({ setDisplayModal }) {
                     <input
                       className="bg-black CouleurtextJauneC"
                       type="text"
-                      placeholder="Expiration date"
-                      value="AAAA-MM-DD"
-                      name="expiration date"
+                      placeholder="AAAA-MM-DD"
+                      value={vessel.ControlDate}
+                      onChange={(e) =>
+                        methodOnChange(e.target.name, e.target.value)
+                      }
+                      name="ControlDate"
                     />
                   </div>
                 </div>
@@ -126,12 +164,20 @@ function Modal({ setDisplayModal }) {
                   <div className="flex pb-1">
                     <select
                       className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600"
-                      onChange={handlePlanetsChange}
+                      name="Planets_idPlanets"
+                      onChange={(e) => {
+                        methodOnChange(e.target.name, e.target.value);
+                      }}
                     >
-                      <option>Select a planet 👇</option>
-                      {/* {planets.map((planet) => (
-                        <option value={planet.value} />
-                      ))} */}
+                      <option key="0" value="" disabled selected hidden>
+                        Select a planet 🌑
+                      </option>
+                      {planets &&
+                        planets.map((planet) => {
+                          return (
+                            <option value={planet.id}>{planet.Name}</option>
+                          );
+                        })}
                     </select>
                   </div>
                 </div>
@@ -141,7 +187,7 @@ function Modal({ setDisplayModal }) {
             <button
               type="button"
               className="btnaddvessel discover text-black border-solid border-2 rounded-xl px-6ml-32 mx-48 mb-6"
-              onClick={handleButtonCancel}
+              onClick={() => settingADD()}
             >
               ADD
             </button>

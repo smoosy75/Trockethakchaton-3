@@ -57,6 +57,9 @@ function Profile() {
     if (!emailRegex.test(mySetting.Email)) {
       return notify("Email is not correct");
     }
+    if (mySetting.Password !== mySetting.ConfirmPassword) {
+      return notify("Passwords are not the same");
+    }
     axios
       .put(`${import.meta.env.VITE_BACKEND_URL}/company/${id}`, {
         ...mySetting,
