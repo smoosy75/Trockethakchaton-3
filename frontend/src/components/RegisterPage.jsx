@@ -1,9 +1,6 @@
-
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import instance from "../../service/apiConnection";
 import updateMeta from "@services/meta";
-
 
 function RegisterPage() {
   const [registerUser, setRegisterUser] = useState("");
@@ -17,14 +14,12 @@ function RegisterPage() {
     e.preventDefault();
   };
 
-function RegisterPage() {
   useEffect(() => {
     updateMeta(
       "Connexion Company",
       "Allows companies to connect to their back office"
     );
   }, []);
-
 
   return (
     <div className="relative flex h-full w-full">
@@ -140,12 +135,14 @@ function RegisterPage() {
                 </div>
               </div>
               <div className="my-10">
-                <button
-                  type="submit"
-                  className="w-full rounded-full p-5 bg-yellow-400 opacity-80 hover:opacity-100"
-                >
-                  Register
-                </button>
+                <Link to="/profile/1">
+                  <button
+                    type="submit"
+                    className="w-full rounded-full p-5 bg-yellow-400 opacity-80 hover:opacity-100"
+                  >
+                    Register
+                  </button>
+                </Link>
               </div>
             </form>
           </div>

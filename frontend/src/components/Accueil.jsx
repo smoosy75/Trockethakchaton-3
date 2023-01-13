@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../pages/background.css";
 import "../pages/btn.css";
 import { Link } from "react-router-dom";
 import Pres from "./Pres";
 import PresSpace from "./PresSpace";
 import "./Accueil.css";
+import updateMeta from "../services/meta";
 
 function Accueil() {
+  useEffect(() => {
+    updateMeta("To infinity and beyond", "Take flight with T-rocket");
+  }, []);
   return (
     <div>
       <div snap-y snap-mandatory overflow-scroll>
