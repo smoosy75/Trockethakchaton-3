@@ -20,7 +20,7 @@ function Rocket() {
         setVesselsCompany(data);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [displayModal, setDisplayModal]);
 
   return (
     <>

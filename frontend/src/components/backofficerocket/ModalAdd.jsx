@@ -4,7 +4,7 @@ import "@pages/Back-office/Rocket.css";
 
 /* eslint-disable react/prop-types */
 
-function Modal() {
+function Modal({ setDisplayModal }) {
   const [planets, setPlanets] = useState();
   const [vessel, setvessel] = useState({
     Name: "",
@@ -14,10 +14,6 @@ function Modal() {
     AssuranceDate: "",
     ControlDate: "",
   });
-
-  //   const handleButtonCancel = () => {
-  //     setDisplayModal(false);
-  //   };
 
   const methodOnChange = (key, value) => {
     const newVessel = { ...vessel };
@@ -187,7 +183,10 @@ function Modal() {
             <button
               type="button"
               className="btnaddvessel discover text-black border-solid border-2 rounded-xl px-6ml-32 mx-48 mb-6"
-              onClick={() => settingADD()}
+              onClick={() => {
+                settingADD();
+                setDisplayModal(false);
+              }}
             >
               ADD
             </button>
