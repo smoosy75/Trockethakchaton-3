@@ -1,6 +1,21 @@
-import React, { useEffect } from "react";
+
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import instance from "../../service/apiConnection";
 import updateMeta from "@services/meta";
+
+
+function RegisterPage() {
+  const [registerUser, setRegisterUser] = useState("");
+
+  const handleChangeRegister = (e) => {
+    const { name, value } = e.target;
+    setRegisterUser({ ...registerUser, [name]: value });
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+  };
 
 function RegisterPage() {
   useEffect(() => {
@@ -9,6 +24,7 @@ function RegisterPage() {
       "Allows companies to connect to their back office"
     );
   }, []);
+
 
   return (
     <div className="relative flex h-full w-full">
@@ -43,7 +59,7 @@ function RegisterPage() {
             </fieldset>
           </div>
           <div className="mt-10">
-            <form>
+            <form onSubmit={handleRegister}>
               <div>
                 <label
                   className="mb-2.5 block font-medium text-yellow-400"
@@ -56,6 +72,7 @@ function RegisterPage() {
                   id="email"
                   className="inline-block w-full rounded-full bg-white p-2.5 leading-none text-black placeholder-gray-500  placeholder:opacity-60"
                   placeholder="Malik.leboss@user.com"
+                  onChange={handleChangeRegister}
                 />
               </div>
               <div className="mt-4">
@@ -70,6 +87,7 @@ function RegisterPage() {
                   id="email"
                   className="inline-block w-full rounded-full bg-white p-2.5 leading-none text-black placeholder-gray-500  placeholder:opacity-60"
                   placeholder="Name of the Company"
+                  onChange={handleChangeRegister}
                 />
               </div>
 
@@ -85,6 +103,7 @@ function RegisterPage() {
                   placeholder="Password"
                   id="email"
                   className="inline-block w-full rounded-full placeholder:text-gray-300 bg-white p-2.5 leading-none text-black placeholder-indigo-900 shadow"
+                  onChange={handleChangeRegister}
                 />
               </div>
               <div className="mt-4">
@@ -99,11 +118,16 @@ function RegisterPage() {
                   placeholder=" confirm Password"
                   id="email"
                   className="inline-block w-full rounded-full placeholder:text-gray-300 bg-white p-2.5 leading-none text-black placeholder-indigo-900 shadow"
+                  onChange={handleChangeRegister}
                 />
               </div>
               <div className="mt-4 flex w-full flex-col justify-between sm:flex-row">
                 <div>
-                  <input type="checkbox" id="remember" />
+                  <input
+                    type="checkbox"
+                    id="remember"
+                    onChange={handleChangeRegister}
+                  />
                   <label htmlFor="remember" className="mx-2 text-sm">
                     Remember me
                   </label>

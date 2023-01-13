@@ -1,0 +1,83 @@
+.title-vessels {
+  margin-right: 2rem;
+  letter-spacing: 3px;
+  word-spacing: 6px;
+  font-size: 50px;
+  font: bold;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-left: 80px;
+  text-transform: uppercase;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 15rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #0a030300;
+  margin: 1rem;
+  margin-top: 5rem;
+  align-items: center;
+  border-radius: 18px;
+  border: solid 2px;
+  border-color: rgb(55, 66, 66);
+  box-shadow: rgba(133, 133, 141, 0.25) 0px 50px 100px -20px,
+    rgba(131, 120, 120, 0.3) 0px 30px 60px -30px;
+}
+
+.card p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border-radius: 18px;
+  color: azure;
+}
+
+.card img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 15rem;
+  max-height: 10rem;
+  padding: 15px;
+}
+
+body {
+  background-color: black;
+}
+
+.take {
+  text-transform: uppercase;
+  font-size: small;
+  margin-left: 50px;
+  margin-bottom: 5px;
+  padding: 5px;
+  color: black;
+  font-weight: bold;
+  background-color: rgba(243, 255, 24, 0.838);
+  border-radius: 1px solid;
+  border-color: yellow;
+  justify-content: flex-end;
+  border-radius: 5px;
+}
+.take:hover {
+  background-color: yellow;
+}
+.card h2 {
+  display: flex;
+  margin: auto;
+}
+.seemore {
+  color: white;
+  font-size: medium;
+}
