@@ -1,0 +1,84 @@
+.departures {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  margin-top: 5rem;
+  font-size: 2rem;
+}
+
+.ho {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bjr {
+  background-color: black;
+  height: 100vh;
+}
+
+.departures h1 {
+  margin-right: 2rem;
+  letter-spacing: 3px;
+  word-spacing: 6px;
+  font-size: 50px;
+  font: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+select {
+  color: black;
+  width: 30%;
+  height: 60px;
+}
+
+option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContainer {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 15rem;
+  height: 15rem;
+  display: block;
+  background-color: #0a030300;
+  margin: 1rem;
+  margin-top: 5rem;
+  align-items: center;
+  border-radius: 18px;
+  border: solid 2px;
+  border-color: rgb(55, 66, 66);
+  box-shadow: rgba(133, 133, 141, 0.25) 0px 50px 100px -20px,
+    rgba(131, 120, 120, 0.3) 0px 30px 60px -30px;
+}
+
+.card p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border-radius: 18px;
+  color: azure;
+}
+
+.card img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 7rem;
+  max-height: 7rem;
+  padding: 15px;
+}
